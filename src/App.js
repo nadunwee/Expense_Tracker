@@ -1,10 +1,20 @@
-import ExpenseData from './components/Expenses/Expenses';
+import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
 import React, { useState } from 'react';
 
 const DUMMY_EXPENSES = [
-  { title: 'Car Insurence', amount: 2342.34, date: new Date(2023, 4, 28) },
-  { title: 'Toilet Paper', amount: 342.43, date: new Date(2023, 4, 28) },
+  {
+    id: '01',
+    title: 'Car Insurence',
+    amount: 342.34,
+    date: new Date(2023, 4, 28),
+  },
+  {
+    id: '02',
+    title: 'Toilet Paper',
+    amount: 40.99,
+    date: new Date(2022, 4, 4),
+  },
 ];
 
 const App = () => {
@@ -19,7 +29,7 @@ const App = () => {
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <ExpenseData items={expenses} />
+      <Expenses items={expenses} />
     </div>
   );
 };
